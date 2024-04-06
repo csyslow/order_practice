@@ -12,18 +12,30 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 const Num = (props) => {
+    const addBtnHandler = () => {
+        props.onAdd(props.meal);
+    }
+    const minusBtnHandler = () => {
+        props.onRemove(props.meal)
+    }
     return (
         <div className={classes.num}>
             {
-                (props.amount && props.amount !== 0) ?
+                (props.meal.amount && props.meal.amount !== 0) ?
                     (<>
-                        <button className={classes.minus}><FontAwesomeIcon icon={faMinus} /></button>
-                        <span className={classes.count}>{props.amount}</span>
+                        <button className={classes.minus}
+                            onClick={minusBtnHandler}>
+                            <FontAwesomeIcon icon={faMinus} />
+                        </button>
+                        <span className={classes.count}>{props.meal.amount}</span>
                     </>
                     )
                     : null
             }
-            <button className={classes.plus}><FontAwesomeIcon icon={faPlus} /></button>
+            <button onClick={addBtnHandler}
+                className={classes.plus}>
+                <FontAwesomeIcon icon={faPlus} />
+            </button>
         </div>
     );
 };

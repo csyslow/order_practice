@@ -54,10 +54,46 @@ const MEALS_DATA = [{
 
 const App = () => {
 
+    const [shoppingCartData, setShoppingCartData] = useState({
+        items:[],
+        totalAmount:0,
+        totalPrice:0
+    });
+
     const [mealsData, setMealsData] = useState(MEALS_DATA);
+
+    
+    const addMealHandler = (addedMeal) => {
+        const newCart = {...shoppingCartData};
+        //判断购物内是否已经存在商品
+        if(newCart.items.indexOf(addedMeal) === -1) {
+            newCart.items.push(addedMeal);
+            addedMeal.amount = 1;
+        } else {
+            addedMeal.amount += 1;
+        }
+        newCart.totalAmount += 1;
+        newCart.totalPrice += addedMeal.price;
+        setShoppingCartData(newCart);
+    };
+
+    const removeMealHandler = (removedMeal) => {
+        const newCart = {...shoppingCartData};
+        removedMeal.amount -= 1;
+        if (removedMeal.amount === 0) {
+            //如果归零，从购物车中移除该商品
+            let removedIdx = newCart.items.indexOf(removedMeal);
+            newCart.items.splice(removedIdx, 1);
+        }
+
+        newCart.totalAmount -= 1;
+        newCart.totalPrice -= removedMeal.price;
+        setShoppingCartData(newCart)
+    }
+
     return (
        <div>
-        <Meals mealsData={mealsData}/>
+        <Meals mealsData={mealsData} onAdd={addMealHandler} onRemove={removeMealHandler}/>
        </div>
     );
 };
