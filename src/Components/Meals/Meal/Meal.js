@@ -2,17 +2,17 @@ import React from 'react';
 import classes from './Meal.module.css'
 import Num from './UI/Num/Num';
 
-const Meal = () => {
+const Meal = (props) => {
     return (
         <div className={classes.meal}>
             <div className={classes.imgBox}>
-                <img src='/img/meals/1.png'/>
+                <img src={props.meal.img}/>
             </div>
             <div>
-                <p className={classes.title}>Burger</p>
-                <p className={classes.desc}>The Big Mac contains two beef patties, cheese, shredded lettus</p>
+                <p className={classes.title}>{props.meal.title}</p>
+                <p className={classes.desc}>{props.meal.desc}</p>
                 <div className={classes.priceWrapper}>
-                    <span className={classes.price}>12</span>
+                    <span className={classes.price}>{props.meal.price}</span>
                     <Num amount={1}/>
                 </div>
             </div>
