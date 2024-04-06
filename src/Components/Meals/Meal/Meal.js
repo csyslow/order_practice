@@ -13,10 +13,7 @@ const Meal = (props) => {
                 <p className={classes.desc}>{props.meal.desc}</p>
                 <div className={classes.priceWrapper}>
                     <span className={classes.price}>{props.meal.price}</span>
-                    <Num meal={props.meal}
-                        onAdd={props.onAdd}
-                        onRemove={props.onRemove}
-                    />
+                    <Num meal={props.meal}/>
                 </div>
             </div>
             <div>
