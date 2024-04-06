@@ -1,8 +1,11 @@
 import React from 'react';
+import Meals from './Components/Meals/Meals';
 
 const App = () => {
     return (
-       <div style={{width:'750rem', height:'200px',backgroundColor:'green'}}></div>
+       <div>
+        <Meals/>
+       </div>
     );
 };
 

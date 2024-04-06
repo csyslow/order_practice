@@ -1,0 +1,7 @@
+.meals {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* 现在的滚动条设置给了meals */
+    overflow: auto;
+}
