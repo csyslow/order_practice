@@ -33,7 +33,7 @@
     right: 0rem;
 }
 
-.totalPrice {
+.totalPrice , .noMeal{
     display: flex;
     align-items: center;
     margin-left: 120rem;
@@ -52,4 +52,15 @@
     background-color: #fcbf49;
     border-radius: 40rem;
     width: 200rem;
+    font-size: 24rem;
+}
+
+.noMeal {
+    color: #aaa;
+    font-size: 34rem;
+}
+
+.disabled {
+    background-color: #777;
+    color: #aaa;;
 }

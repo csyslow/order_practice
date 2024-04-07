@@ -9,11 +9,19 @@ const Cart = () => {
         <div className={classes.cart}>
             <div className={classes.bagIcon}>
                 <img src={iconImg} alt="bag" />
-                <span className={classes.totalAmount}>{ctx.totalAmount}</span>
-            </div>
+                {(ctx.totalAmount === 0) ?
+                    null :
+                    <span className={classes.totalAmount}>{ctx.totalAmount}</span>
+                }
 
-            <p className={classes.totalPrice}>{ctx.totalPrice}</p>
-            <button className={classes.finishBtn}>Go To Payment</button>
+            </div>
+            {(ctx.totalAmount === 0) ?
+                <p className={classes.noMeal}>Your Bag is Empty</p> :
+                <p className={classes.totalPrice}>{ctx.totalPrice}</p>
+            }
+
+            
+            <button className={`${classes.finishBtn} ${ ctx.totalAmount === 0 ? classes.disabled : ''}`}>Go To Payment</button>
         </div>
     );
 };
