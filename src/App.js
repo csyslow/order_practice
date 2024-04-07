@@ -93,10 +93,16 @@ const App = () => {
         setShoppingCartData(newCart)
     }
 
+    const filterHandler = (keyword) => {
+        //如果有找到就放数组里，没有就不放
+        const newMealsData = MEALS_DATA.filter(item => (item.title.indexOf(keyword) !== -1))
+        setMealsData(newMealsData)
+    }
+
     return (
         <CartContext.Provider value={{...shoppingCartData, addItem, removeItem}}>
             <div>
-                <FilterMeals/>
+                <FilterMeals onFilter={filterHandler}/>
                 <Meals mealsData={mealsData}/>
             </div>
         </CartContext.Provider>
