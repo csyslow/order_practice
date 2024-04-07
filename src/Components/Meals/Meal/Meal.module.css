@@ -45,6 +45,6 @@ img {
     font-size: 24rem;
 }
 
-.num {
-
+.descBox {
+    flex: auto;
 }

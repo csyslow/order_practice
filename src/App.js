@@ -90,7 +90,7 @@ const App = () => {
         }
 
         newCart.totalAmount -= 1;
-        newCart.totalPrice -= removedMeal.price;
+        newCart.totalPrice -= +removedMeal.price;
         setShoppingCartData(newCart)
     }
 
@@ -102,7 +102,8 @@ const App = () => {
     }
 
     return (
-        <CartContext.Provider value={{...shoppingCartData, addItem, removeItem}}>
+        <CartContext.Provider 
+        value={{...shoppingCartData, addItem, removeItem}}>
             <div>
                 <FilterMeals onFilter={filterHandler}/>
                 <Meals mealsData={mealsData}/>

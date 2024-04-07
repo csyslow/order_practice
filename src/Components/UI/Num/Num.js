@@ -8,8 +8,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 // npm i --save @fortawesome/free-regular-svg-icons
 // npm i --save @fortawesome/free-brands-svg-icons
 // npm i --save @fortawesome/react-fontawesome@latest   -->组件
-import CartContext from '../../../../../store/cart-context';
-
+import CartContext from '../../../store/cart-context';
 
 
 const Num = (props) => {
