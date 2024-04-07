@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Meals from './Components/Meals/Meals';
 import CartContext from './store/cart-context';
 import FilterMeals from './Components/FilterMeals/FilterMeals';
+import Cart from './Components/Cart/Cart';
 
 const MEALS_DATA = [{
     id: '1',
@@ -75,7 +76,7 @@ const App = () => {
             addedMeal.amount += 1;
         }
         newCart.totalAmount += 1;
-        newCart.totalPrice += addedMeal.price;
+        newCart.totalPrice += +addedMeal.price;
         setShoppingCartData(newCart);
     };
 
@@ -105,6 +106,7 @@ const App = () => {
             <div>
                 <FilterMeals onFilter={filterHandler}/>
                 <Meals mealsData={mealsData}/>
+                <Cart />
             </div>
         </CartContext.Provider>
 

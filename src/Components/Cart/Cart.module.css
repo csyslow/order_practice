@@ -1,0 +1,55 @@
+.cart {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 700rem;
+    height: 80rem;
+    background-color: #333;
+    bottom:30rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 40rem;
+}
+
+.bagIcon {
+    width: 90rem;
+    height: 100rem;
+    position: absolute;
+    bottom: -10rem;
+}
+
+.totalAmount { 
+    position: absolute;
+    width: 36rem;
+    height: 36rem;
+    line-height: 36rem;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 22rem;
+    right: 0rem;
+}
+
+.totalPrice {
+    display: flex;
+    align-items: center;
+    margin-left: 120rem;
+    color: #fff;
+    margin-left: 80rem;
+    font-size: 36rem;
+}
+
+.totalPrice::before {
+    content: '$';
+    font-size: 24rem;
+}
+
+.finishBtn {
+    border: none;
+    background-color: #fcbf49;
+    border-radius: 40rem;
+    width: 200rem;
+}
