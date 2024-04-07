@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 999;
-    border-bottom: 1px #f2f2f2 solid;
+    border-bottom: 2rem #f2f2f2 solid;
     align-items: center;
     justify-content: center;
 }
@@ -15,13 +15,15 @@
     width: 650rem;
     height: 70rem;
     border: none;
-    border-radius: 16px;
+    border-radius: 32rem;
     background-color: #f2f2f2;
     padding-left: 60rem;
+    font-size: 32rem;
 
 }
 
 .searchIcon {
+    font-size: 40rem;
     position: absolute;
     left: 10rem;
     top: 0;

@@ -12,17 +12,19 @@
     width: 36rem;
     height: 36rem;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: px;
     line-height: 40rem;
     padding: 0;
+    font-size: 28rem;
 }
 
 .minus {
     background-color: white;
     border: 1px solid black;
+    font-size: 28rem;
 }
 
 .count {
-    font-size: 16px;
-    margin: 0 5px;
+    font-size: 32rem;
+    margin: 0 10rem;
 }
