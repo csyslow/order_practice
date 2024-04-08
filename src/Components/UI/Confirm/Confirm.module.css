@@ -1,0 +1,40 @@
+.confirmOuter {
+    z-index: 999;
+
+}
+
+.confirm {
+    position: absolute;
+    width: 700rem;
+    height: 300rem;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 40rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly; 
+    align-items: center;
+}
+
+.confirmText {
+    font-size: 38rem;
+}
+
+.cancelBtn, .confirmBtn {
+    border: 2rem solid #ccc;
+    background-color: #fff;
+    width: 180rem;
+    height: 60rem;
+    border-radius: 40rem;
+    font-size: 28rem;
+}
+
+.confirmBtn {
+    background-color: #fcbf49;
+    border: none;
+    margin-left: 50rem;
+}

@@ -9,6 +9,9 @@ const CartContext = React.createContext({
     },
     removeItem: () => {
 
+    },
+    clearCart: () => {
+        
     }
 })
 
