@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classes from './Cart.module.css'
 import iconImg from '../../asset/bag.png'
 import CartContext from '../../store/cart-context';
@@ -10,6 +10,20 @@ const Cart = () => {
 
     const [showDetails, setShowDetails] = useState(false);
     const [showCheckout, setShowCheckout] = useState(false)
+
+    //组件每次重新渲染的时候会重新执行组件函数
+    //当购物车数量为0就不显示details
+    // if (ctx.totalAmount === 0) {
+    //     setShowDetails(false);
+    // }
+    //上面这种写法会导致死循环，因为每次setState()都会触法重新渲染
+    useEffect(() => {
+        console.log('effect');
+        if (ctx.totalAmount === 0) {
+            setShowDetails(false);
+            setShowCheckout(false);
+        }
+    },[ctx]);
 
     const toggleDetailsHandler = () => {
         if (ctx.totalAmount === 0) {
